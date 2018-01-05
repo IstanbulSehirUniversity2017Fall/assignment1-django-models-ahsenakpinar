@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Brand</title>
+    <title>{{ title }}</title>
 </head>
 <body>
-{{ brand.id }}
-{{ brand.name }}
-{{ brand.type_name }}
-{{ brand.value }}
-{{ brand.location }}
-{{ brand.foundation_year }}
+{{ brand.id }}<br>
+{{ brand.name }}<br>
+{{ brand.cat_type }}<br>
+{{ brand.value }}<br>
+{{ brand.location }}<br>
+{{ brand.foundation_year }}<br>
+{{ brand.get_is_favorite }}
+
+<br>
+Every Model in The Brand: <br>
+{% for model in model_list %}
+<a href="http://127.0.0.1:8000/demo/model/{{ model.id }}">{{ model.id }} - {{ model.brand }} - {{ model.name }} - {{ model.color_name }} - {{ model.screen_size }} - {{ model.type_name }} - {{ model.camera }} - {{ model.battery_capacity }} - {{ model.memory }} - {{ model.storage }} - {{ model.get_is_active }}</a>
+    <br>{% endfor %}
+
 </body>
 </html>

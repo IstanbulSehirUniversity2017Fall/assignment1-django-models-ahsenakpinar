@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+{{ category.id }}<br>
+{{ category.name }}<br>
+{{ category.type_name }}<br>
+{{ category.get_is_favorite }}<br>
+<br>
+Every Brand in The Category: <br>
+{% for brand in brand_list %}
+    <a href="http://127.0.0.1:8000/demo/brand/{{ brand.id }}">{{ brand.id }} - {{ brand.name }} - {{ brand.cat_type }} - {{ brand.value }} - {{ brand.location }} - {{ brand.foundation_year }} - {{ brand.get_is_favorite }}</a>
+    <br>{% endfor %}
+
+</body>
+</html>

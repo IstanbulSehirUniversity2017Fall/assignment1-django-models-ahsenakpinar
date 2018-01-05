@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    {% for model in model_forms %}
+        <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+            <a href="http://127.0.0.1:8000/demo/model/{{ model.0.id }}">{{ model.0.id }} - {{ model.0.brand }} - {{ model.0.name }} - {{ model.0.color_name }} - {{ model.0.screen_size }} - {{ model.0.type_name }} - {{ model.0.camera }} - {{ model.0.battery_capacity }} - {{ model.0.memory }} - {{ model.0.storage }}</a>{{ model.1 }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+        <br>
+    {% endfor %}
+
+
+
+</body>
+</html>
